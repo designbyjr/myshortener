@@ -1,44 +1,24 @@
-# Url Shortner
+# Backend test - Url Shortner
 
-Without using an external database, we'd like you to create a URL shortening service. 
+We'd like you to create a URL shortening service, using an sqlite database.
 
-There should be an endpoint that responds to POST with a json body containing a URL, which responds with a JSON repsonse of the short url and the orignal URL, as in the following curl example:
+There should be an input field and submit button on the page into which the URL you would like to shorten can be entered.
+A short url should be returned upon submitting the form.
 
-~~~
-curl localhost -XPOST -d '{ "url": "http://www.payasugym.com" }'
-{ "short_url": "/abc123", "url": "http://www.payasugym.com" }
-~~~
-When you send a GET request to a previously returned URL, it should redirect to the POSTed URL, as shown in the following curl example:
+When visiting the short url it should redirect you to the previously entered url.
 
-~~~
-curl -v localhost/abc123
-...
-< HTTP/1.1 301 Moved Permanently
-...
-< Location: http://www.payasugym.com
-...
-{ "url": "http://www.payasugym.com" }
-~~~
-On the frontend we would like you to use React, there should be an input field and submit button on the page into which the URL you would like to shorten can be entered and the short url should be returned 
+On the home page of the url shortner it would be great to see some sort of statistic, what statistic this is and how you display this is up to you.
 
-To start you off on the frontend we have created a hello world example, which you can use as the basis for the React Frontend.
-To start off, clone the repository and create a new branch.
+You can use whatever PHP framework you are comfortable with. 
 
-To install the node modules run:
-~~~
-npm install
-~~~
-
-To create the JS bundle and run the watcher run:
-~~~
-npm run watch
-~~~
-
-You can use whatever npm modules and PHP framework you are comfortable with. 
-
-For extra points: Style the frontend with Sass
+We are not concerned about how the frontend looks as long as the functionality is in place.
 
 Please don't spend more than a few hours on this.
+
+From a functionality side, the 3 points we will be looking at are:
+1. Can we post a url in a form and does it return a shortened url
+2. Does the shortned url redirect to the posted url
+3. Does the statistic update when I do a relevant action
 
 ## Submission
 

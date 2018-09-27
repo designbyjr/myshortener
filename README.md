@@ -16,6 +16,7 @@ We are not concerned about how the frontend looks as long as the functionality i
 Please don't spend more than a few hours on this.
 
 From a functionality side, the 3 points we will be looking at are:
+
 1. Can we post a url in a form and does it return a shortened url
 2. Does the shortned url redirect to the posted url
 3. Does the statistic update when I do a relevant action

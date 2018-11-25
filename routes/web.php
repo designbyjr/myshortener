@@ -13,7 +13,7 @@
 
 Route::get('/', 'UrlController@showform');
 
-Route::get('/{?string}', 'UrlController@getRedirectUrl');
-Route::get('/{?string}/stats', 'UrlController@getStats');
+Route::get('/{string}', 'UrlController@getRedirectUrl');
+Route::get('/{string}/stats', 'UrlController@getStats');
 
 Route::post('/generate', 'UrlController@createUrl');

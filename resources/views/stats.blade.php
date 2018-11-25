@@ -20,24 +20,17 @@
 <script language = "JavaScript">
 	function drawChart() {
 		// Define the chart to be drawn.
-		var data = new google.visualization.DataTable();
-		data.addColumn('string', 'Browser');
-		data.addColumn('number', 'Percentage');
-		data.addRows([
-			@foreach($items as $item)
-			[$item['name'], $item['value']],
-            @endforeach
+		var data = google.visualization.arrayToDataTable([
+            ['date','requests'],
+			['{{$items['name'][0]}}', Number({{$items['value'][0]}})],
+
 
 		]);
 
-		// Set chart options
-		var options = {
-			'width':550,
-			'height':400
-		};
+		var options = {title: 'Requests by date'};
 
 		// Instantiate and draw the chart.
-		var chart = new google.visualization.PieChart(document.getElementById('container'));
+		var chart = new google.visualization.BarChart(document.getElementById('container'));
 		chart.draw(data, options);
 	}
 	google.charts.setOnLoadCallback(drawChart);

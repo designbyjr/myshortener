@@ -11,6 +11,8 @@
 </head>
 <body>
 <h1>Url shortner</h1>
+<p>Please enter the url or web address you want to shorten in the form below</p>
+<p>We use base 64 encode to generate our unique urls with a sqlite database</p>
 <form action="/generate" method="post">
     @csrf
     <label for="url">Url:
@@ -18,5 +20,17 @@
     </label>
     <input type="submit">
 </form>
+@if(isset($newurl))
+    {{$newurl}}
+@endif
+
+@if(!empty($errors->first()))
+    <div class="row col-lg-12">
+        <div class="alert alert-danger">
+            <span>{{ $errors->first() }}</span>
+        </div>
+    </div>
+@endif
+
 </body>
 </html>
